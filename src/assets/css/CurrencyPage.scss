@@ -1,0 +1,84 @@
+#main-contt {
+
+    background: url('../images/bg-stock.jpg')center center;
+    width: 100%;
+    min-height: 500px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+
+    .currency-box {
+
+
+        // margin-top: 400px;
+        margin: 400px auto;
+        max-width: 60%;
+        padding: 30px;
+        background: #FFF;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .currency-wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .convert-btn {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+    }
+
+    .convert-btn>Button {
+        font-size: 16px !important;
+        font-weight: 600;
+    }
+
+    .custom-input {
+
+        border-radius: 5px;
+
+        padding: 10px;
+        box-shadow: none;
+        transition: border-color 0.3s ease;
+
+    }
+
+    .custom-input:focus {
+        // border-color: #0056b3;
+        border: 1px solid #007bff;
+
+        box-shadow: none;
+
+        outline: none;
+
+    }
+
+    .custom-select {
+        // border: 2px solid #007bff;  /* Change border color */
+        border-radius: 5px;
+        /* Rounded corners */
+        padding: 10px;
+        /* Increase padding */
+        box-shadow: none;
+        /* Remove the default shadow */
+        transition: border-color 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .custom-select:focus {
+        border-color: #0056b3;
+        /* Change border color on focus */
+        box-shadow: none;
+        /* Remove the shadow on focus */
+        outline: none;
+        /* Remove the outline */
+    }
+
+}
