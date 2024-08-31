@@ -128,7 +128,7 @@ function CurrencyPage() {
                             </div>
 
                             <div className='converted-amount'>
-                                {convertedAmount.toFixed(2)}
+                                {convertedAmount}
                             </div>
                         </div>
                     </form>
