@@ -1,84 +1,145 @@
 #main-contt {
+   
+}
 
-    background: url('../images/bg-stock.jpg')center center;
+.currency-form-wrapper {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    min-height: 500px;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    margin-top: 300px;
+}
 
+.currency-form {
+    width: 60%;
+    max-width: 600px; /* Limit the width for larger screens */
+    margin: auto; /* Center the form */
+}
 
-    .currency-box {
+.currency-box {
+    width: 100%;
+    padding: 30px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
+.currency-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-        // margin-top: 400px;
-        margin: 400px auto;
-        max-width: 60%;
-        padding: 30px;
-        background: #FFF;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.convert-btn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 10px;
+}
 
+.convert-btn > Button {
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.custom-input {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+.custom-input:focus {
+    border: 1px solid #007bff;
+    box-shadow: none;
+    outline: none;
+}
+
+.custom-select {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+.custom-select:focus {
+    border-color: #0056b3;
+    box-shadow: none;
+    outline: none;
+}
+
+.converted-amount {
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid lightgray;
+    max-width: 90px;
+    padding: 10px 30px;
+    margin-top: 10px; /* Add margin to separate it from other elements */
+}
+
+.history-table{
+    max-width: 60%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 1200px) {
+    .currency-form {
+        width: 80%; /* Increase the width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .currency-form-wrapper {
+        margin-top: 200px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .currency-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Increase gap between items */
     }
 
-    .currency-wrapper {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-evenly;
+    .currency-form {
+        width: 90%; /* Increase the width for tablets */
+    }
+
+    .currency-box {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .converted-amount {
+        text-align: center; /* Center the text for better visibility */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .currency-form-wrapper {
+        margin-top: 150px; /* Further adjust margin for mobile screens */
+    }
+
+    .currency-form {
+        width: 100%; /* Full width for mobile screens */
+    }
+
+    .currency-box {
+        padding: 15px; /* Reduce padding for mobile screens */
+    }
+
+    .custom-input, .custom-select {
+        width: 100%; /* Make input and select full width */
+        margin-top: 10px; /* Add margin for separation */
     }
 
     .convert-btn {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 10px;
-
+        justify-content: center; /* Center the button on mobile */
     }
 
-    .convert-btn>Button {
-        font-size: 16px !important;
-        font-weight: 600;
+    .converted-amount {
+        width: 100%; /* Full width for better visibility on mobile */
+        text-align: center; /* Center the text */
+        padding: 10px; /* Add padding for mobile */
     }
-
-    .custom-input {
-
-        border-radius: 5px;
-
-        padding: 10px;
-        box-shadow: none;
-        transition: border-color 0.3s ease;
-
-    }
-
-    .custom-input:focus {
-        // border-color: #0056b3;
-        border: 1px solid #007bff;
-
-        box-shadow: none;
-
-        outline: none;
-
-    }
-
-    .custom-select {
-        // border: 2px solid #007bff;  /* Change border color */
-        border-radius: 5px;
-        /* Rounded corners */
-        padding: 10px;
-        /* Increase padding */
-        box-shadow: none;
-        /* Remove the default shadow */
-        transition: border-color 0.3s ease;
-        /* Smooth transition */
-    }
-
-    .custom-select:focus {
-        border-color: #0056b3;
-        /* Change border color on focus */
-        box-shadow: none;
-        /* Remove the shadow on focus */
-        outline: none;
-        /* Remove the outline */
-    }
-
 }

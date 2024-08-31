@@ -24,7 +24,7 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(function (response) {
     return response;
 }, function (error) {
-    if (error.response?.status === 401 && window.location.pathname !== '/sign-in') {
+    if (error.response?.status === 401 && window.location.pathname !== '/login') {
         sessionStorage.clear()
         // window.location.reload()
     }

@@ -5,12 +5,16 @@ import Form from 'react-bootstrap/Form';
 import apiClient from '../shared/apiClient';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast';
+import { Spinner } from 'react-bootstrap';
 
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
+    const[error,setError]=useState("")
+    const [isLoading, setisLoading] = useState(false);
 
 
     const validateForm = () => {
@@ -35,12 +39,19 @@ function Login() {
                 email: email, password: password
             }
             console.log("user data", userData)
+            setisLoading(true)
             apiClient.post('/user/login', userData).then((res) => {
-                if (res.data) {
+                    toast.success("Login Successful")
                     sessionStorage.setItem("auth_token", res.data.token)
+            setisLoading(false)
+                    
                     navigate('/home')
-                }
-            }).catch(err => console.log("Error", err))
+                
+            }).catch((err) => {
+                console.log("Error", err)
+                setisLoading(false)
+                setError(err?.response?.data?.message)
+            })
 
             // Here you would typically send a request to your server
         }
@@ -51,6 +62,10 @@ function Login() {
         <div className="login-wrapper">
             <div className="login-form-container">
                 <h2 className="login-title">Login</h2>
+                {error&&
+                <span className='api-error'>{error}</span>
+
+                }
                 <Form onSubmit={handleSubmit} className="login-form">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -82,8 +97,8 @@ function Login() {
                     </Form.Group>
 
 
-                    <Button variant="primary" type="submit" className="login-button">
-                        Login
+                    <Button variant="primary" type="submit" className="login-button" disabled={isLoading}>
+                    {isLoading ? <> Login <Spinner size='sm' as="span" animation="border" /></> : 'Login'}
                     </Button>
                 </Form>
             </div>

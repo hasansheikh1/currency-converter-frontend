@@ -4,6 +4,10 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    background: #0F2027;  
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+
 }
 
 .login-form-container {
@@ -26,4 +30,11 @@
 
 .login-button {
     width: 100%;
+}
+.api-error{
+
+    color: crimson;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
 }
